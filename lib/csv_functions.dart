@@ -83,6 +83,18 @@ Future<List<List<dynamic>>> secondFile() async {
     }
     popularVal[key] = newKey;
   }
+  
 
-  return secondData ;
+  // to convert the map to List<List<dynamic>>
+  for (int i = 0; i < keys.length; i++) {
+    String key = keys[i];
+    String? value = popularVal[key];
+    secondData.add([key, value]);
+  }
+
+  // Generate the second file
+  String secondDataFile = const ListToCsvConverter().convert(secondData);
+  print('The second file data: ');
+  print(secondDataFile);
+  return const CsvToListConverter().convert(secondDataFile, eol: "\n");
 }
