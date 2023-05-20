@@ -37,3 +37,13 @@ Future<List<List<dynamic>>> firstFile() async {
   print(firstDataFile);
   return const CsvToListConverter().convert(firstDataFile, eol: "\n");
 }
+
+/// Generate the second csv file that view in the first column
+/// a list of name products and in the second column is
+/// the most popular brand of the products.
+Future<List<List<dynamic>>> secondFile() async {
+  Map<String, List<String>> popularBrands = {};
+  Map<String, String> popularVal = {};
+  List<List<dynamic>> secondData = [];
+  return secondData;
+}
