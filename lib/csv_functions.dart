@@ -56,5 +56,23 @@ Future<List<List<dynamic>>> secondFile() async {
       popularBrands[key] = [value];
     }
   }
+    List<String> keys = popularBrands.keys.toList();
+  for (int i = 0; i < keys.length; i++) {
+    String key = keys[i];
+    List<String>? value = popularBrands[key];
+
+    // create map of strings as the product name and the values is the number
+    // of duplication brands
+    Map<String, int> brandsNum = {};
+    for (String string in value!) {
+      if (brandsNum.containsKey(string)) {
+        brandsNum[string] = brandsNum[string]! + 1;
+      } else {
+        brandsNum[string] = 1;
+      }
+    }
+
+   
+  }
   return secondData;
 }
