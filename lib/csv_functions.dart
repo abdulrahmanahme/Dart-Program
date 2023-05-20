@@ -22,7 +22,17 @@ Future<List<List<dynamic>>> firstFile() async {
   Map<String, int> orderNum = {};
   List<List<dynamic>> firstData = [];
 
-  
+    /* create 'orderNum' map to deal with the keys as the product names
+     and the values is the count of the orders of every product */
+  for (List<dynamic> val in getCsvFile!) {
+    String key = val[2];
+    int value = val[3];
+    if (orderNum.containsKey(key)) {
+      orderNum[key] = value + orderNum[key]!;
+    } else {
+      orderNum[key] = value;
+    }
+  }
 
   return firstData;
 }
