@@ -14,3 +14,15 @@ Future<List<List<dynamic>>> getcsv(BuildContext context) async {
   print(result);
   return const CsvToListConverter().convert(result);
 }
+/// Generate the first csv file that view in the first column
+/// a list of name products and in the second column is
+/// the average quantity of the product purchased per order.
+Future<List<List<dynamic>>> firstFile() async {
+  int? ordersNum = getCsvFile?.length;
+  Map<String, int> orderNum = {};
+  List<List<dynamic>> firstData = [];
+
+  
+
+  return firstData;
+}
