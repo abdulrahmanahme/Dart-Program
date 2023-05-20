@@ -45,5 +45,16 @@ Future<List<List<dynamic>>> secondFile() async {
   Map<String, List<String>> popularBrands = {};
   Map<String, String> popularVal = {};
   List<List<dynamic>> secondData = [];
+  
+  //create the popular brands map to collect the different brands for every product.
+  for (List<dynamic> val in getCsvFile!) {
+    String key = val[2];
+    String value = val[4];
+    if (popularBrands.containsKey(key)) {
+      popularBrands[key]?.add(value);
+    } else {
+      popularBrands[key] = [value];
+    }
+  }
   return secondData;
 }
