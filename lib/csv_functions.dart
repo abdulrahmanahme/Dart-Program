@@ -70,9 +70,19 @@ Future<List<List<dynamic>>> secondFile() async {
       } else {
         brandsNum[string] = 1;
       }
+      
     }
-
-   
+    // found the most popular brand for every product name
+    int? maxVal = 0;
+    String newKey = '';
+    for (String key in brandsNum.keys) {
+      if (brandsNum[key]! > maxVal!) {
+        newKey = key;
+        maxVal = brandsNum[key];
+      }
+    }
+    popularVal[key] = newKey;
   }
-  return secondData;
+
+  return secondData ;
 }
