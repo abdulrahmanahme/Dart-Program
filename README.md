@@ -1,11 +1,6 @@
-# Dart-Program
+# csv_file
 
 A new Flutter project.
-- first run the project 
-- in home screen and press on button " show file " to show the data in csv file
--  open the console to see the data file  
--  then press on button "show data " to show the data in the console after analysed it 
-
 
 ## Getting Started
 
