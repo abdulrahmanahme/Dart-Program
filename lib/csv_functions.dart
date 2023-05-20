@@ -14,6 +14,7 @@ Future<List<List<dynamic>>> getcsv(BuildContext context) async {
   print(result);
   return const CsvToListConverter().convert(result);
 }
+
 /// Generate the first csv file that view in the first column
 /// a list of name products and in the second column is
 /// the average quantity of the product purchased per order.
@@ -22,8 +23,19 @@ Future<List<List<dynamic>>> firstFile() async {
   Map<String, int> orderNum = {};
   List<List<dynamic>> firstData = [];
 
-  
-// to convert the map to List<List<dynamic>> and calculate the average quantity
+  /* create 'orderNum' map to deal with the keys as the product names
+     and the values is the count of the orders of every product */
+  for (List<dynamic> val in getCsvFile!) {
+    String key = val[2];
+    int value = val[3];
+    if (orderNum.containsKey(key)) {
+      orderNum[key] = value + orderNum[key]!;
+    } else {
+      orderNum[key] = value;
+    }
+  }
+
+  // to convert the map to List<List<dynamic>> and calculate the average quantity
   List<String> keys = orderNum.keys.toList();
   for (int i = 0; i < keys.length; i++) {
     String key = keys[i];
@@ -45,7 +57,7 @@ Future<List<List<dynamic>>> secondFile() async {
   Map<String, List<String>> popularBrands = {};
   Map<String, String> popularVal = {};
   List<List<dynamic>> secondData = [];
-  
+
   //create the popular brands map to collect the different brands for every product.
   for (List<dynamic> val in getCsvFile!) {
     String key = val[2];
@@ -56,7 +68,8 @@ Future<List<List<dynamic>>> secondFile() async {
       popularBrands[key] = [value];
     }
   }
-    List<String> keys = popularBrands.keys.toList();
+
+  List<String> keys = popularBrands.keys.toList();
   for (int i = 0; i < keys.length; i++) {
     String key = keys[i];
     List<String>? value = popularBrands[key];
@@ -70,8 +83,8 @@ Future<List<List<dynamic>>> secondFile() async {
       } else {
         brandsNum[string] = 1;
       }
-      
     }
+
     // found the most popular brand for every product name
     int? maxVal = 0;
     String newKey = '';
@@ -83,7 +96,6 @@ Future<List<List<dynamic>>> secondFile() async {
     }
     popularVal[key] = newKey;
   }
-  
 
   // to convert the map to List<List<dynamic>>
   for (int i = 0; i < keys.length; i++) {
