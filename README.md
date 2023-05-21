@@ -6,6 +6,7 @@ A new Flutter project.
 -  then press on button "show data " to show the data in the console after analysed it 
 A new Flutter project.
 
+- if you want to add a asset CSV file first add the asset to depandency and file assets in project file and go to CSV-function.dart and add the file path to getCvs function and run project
 # SCREENSHOOT
 
 ![image](https://github.com/abdulrahmanahme/Dart-Program/assets/47110411/4a85149e-4b1d-419a-9721-ca7f83f5688d)
