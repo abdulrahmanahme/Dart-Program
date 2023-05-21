@@ -6,6 +6,9 @@ A new Flutter project.
 -  then press on button "show data " to show the data in the console after analysed it 
 A new Flutter project.
 
+# Run Testing 
+- first go t file test and open file "csv_functoins_test" and run test 
+
 - if you want to add a asset CSV file first add the asset to depandency and file assets in project file and go to CSV-function.dart and add the file path to getCvs function and run project
 # SCREENSHOOT
 
